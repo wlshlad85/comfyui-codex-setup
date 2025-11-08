@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Node / Claude local caches
+.claude/
+.claude-cache/
+.claude-code/
+.claude_history/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Models / large binaries (tracked via pointer files instead)
+models/*
+!models/PLACEHOLDERS.md
+checkpoints/
+loras/
+embeddings/
+vae/
+cache/
+downloads/
+outputs/
+temp/
+ComfyUI/
