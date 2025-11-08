@@ -42,6 +42,7 @@ bash scripts/run_comfyui.sh
 comfyui-codex-setup/
 ├─ scripts/                # setup + run helpers
 ├─ codex/                  # Claude Code task prompts + recipes
+├─ guides/                 # Deep-dive playbooks (GPU- or workflow-specific)
 ├─ nodes.txt               # curated list of recommended custom nodes
 ├─ models/PLACEHOLDERS.md  # where to put models (do NOT commit models)
 ├─ comfyui.env             # port/paths toggles
@@ -90,6 +91,10 @@ Large files should not be committed. Consider Git LFS or keep them local.
 ## Recommended Custom Nodes
 
 The file `nodes.txt` lists well-maintained nodes (render managers, downloaders, SDXL utilities, upscalers, etc.). The install scripts will clone them into `ComfyUI/custom_nodes/`.
+
+## Additional Guides
+
+- [RTX 5070 Text-to-Video Setup](guides/rtx5070_text_to_video.md): Production-ready workflow for CogVideoX, Stable Video Diffusion, AnimateDiff, and Mochi-1 on 12GB VRAM systems.
 
 ## GPU / CUDA Notes
 
