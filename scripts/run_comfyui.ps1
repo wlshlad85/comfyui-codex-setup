@@ -13,8 +13,10 @@ if (Test-Path $envPath) {
 
 $py = $env:PYTHON_EXE
 if ([string]::IsNullOrWhiteSpace($py)) {
-    $py = ".\.venv\Scripts\python.exe"
+    $py = Join-Path (Get-Location) ".venv\Scripts\python.exe"
 }
+# Resolve to absolute path
+$py = (Resolve-Path $py).Path
 if (-not (Test-Path $py)) {
     throw "Python not found at $py. Run scripts/setup_windows.ps1 first."
 }
