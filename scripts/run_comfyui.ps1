@@ -21,17 +21,17 @@ if (-not (Test-Path $py)) {
 
 # Build args
 $port = $env:COMFY_PORT
-$host = $env:COMFY_HOST
+$listenHost = $env:COMFY_HOST
 $low = $env:COMFY_LOW_VRAM
 $cpu = $env:COMFY_FORCE_CPU
 $dml = $env:COMFY_USE_DIRECTML
 
-$flags = @("--port", $port, "--listen", $host)
+$flags = @("--port", $port, "--listen", $listenHost)
 if ($low -eq "true") { $flags += @("--lowvram") }
 if ($cpu -eq "true") { $flags += @("--cpu") }
 if ($dml -eq "true") { $flags += @("--directml") }
 
-Write-Host "Launching ComfyUI at http://$($host):$port ..."
+Write-Host "Launching ComfyUI at http://$($listenHost):$port ..."
 pushd ComfyUI
 & $py main.py @flags
 popd
